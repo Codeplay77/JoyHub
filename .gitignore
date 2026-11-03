@@ -1,0 +1,31 @@
+# Windows (CMake / Visual Studio)
+Windows/build*/
+Windows/*.exe
+.vs/
+CMakeUserPresets.json
+
+# Android (Gradle / Android Studio)
+Android/.gradle/
+Android/.idea/
+Android/.kotlin/
+Android/local.properties
+Android/build/
+Android/app/build/
+Android/captures/
+*.iml
+*.apk
+*.aab
+*.jks
+*.keystore
+
+# Binários e relatórios gerados (publique os binários em Releases)
+output/
+
+# Python
+__pycache__/
+
+# Sistema
+*.log
+Thumbs.db
+desktop.ini
+.DS_Store

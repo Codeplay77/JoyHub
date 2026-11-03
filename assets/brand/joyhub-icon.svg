@@ -1,0 +1,4 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 108 108" role="img" aria-label="JoyHub"><rect width="108" height="108" rx="24" fill="#101D30"/>
+<path fill="#65E2EF" fill-rule="evenodd" d="M38,46 L70,46 Q77,46 79,55 L83,70 Q85,80 77,80 Q73,80 66,71 L42,71 Q35,80 31,80 Q23,80 25,70 L29,55 Q31,46 38,46 Z M48,52 L48,62 Q48,69 41,69 Q34,69 34,62 L38,62 Q38,65 41,65 Q44,65 44,62 L44,52 Z M66,55 A2.5,2.5 0,1 0,71 55 A2.5,2.5 0,1 0,66 55 M72,61 A2.5,2.5 0,1 0,77 61 A2.5,2.5 0,1 0,72 61"/>
+<path fill="none" stroke="#F0F6FC" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" d="M40,31 L54,39 L68,31 M54,26 L54,46"/>
+<path fill="#F0F6FC" d="M37,31 A3,3 0,1 0,43 31 A3,3 0,1 0,37 31 M51,26 A3,3 0,1 0,57 26 A3,3 0,1 0,51 26 M65,31 A3,3 0,1 0,71 31 A3,3 0,1 0,65 31"/></svg>

@@ -1,0 +1,36 @@
+#pragma code_page(65001)
+#include <winver.h>
+
+// Ícone do executável (gerado por tools/icongen.cpp a partir de src/icon.cpp).
+1 ICON "app.ico"
+// Arte de fundo compartilhada com o Android, embutida para o .exe não depender de arquivos soltos.
+101 RCDATA "signal_background.png"
+
+// A descrição aparece no aviso do Firewall do Windows e no Gerenciador de Tarefas.
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,2,0,0
+ PRODUCTVERSION 1,2,0,0
+ FILEFLAGSMASK 0x3fL
+ FILEFLAGS 0x0L
+ FILEOS VOS_NT_WINDOWS32
+ FILETYPE VFT_APP
+ FILESUBTYPE VFT2_UNKNOWN
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "041604b0"
+        BEGIN
+            VALUE "CompanyName", "JoyHub"
+            VALUE "FileDescription", "JoyHub - controle do celular no PC"
+            VALUE "FileVersion", "1.2.0"
+            VALUE "InternalName", "JoyHub"
+            VALUE "OriginalFilename", "JoyHub.exe"
+            VALUE "ProductName", "JoyHub"
+            VALUE "ProductVersion", "1.2.0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x416, 1200
+    END
+END

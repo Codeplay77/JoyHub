@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:background="@drawable/bg_screen">
+
+    <LinearLayout android:id="@+id/content"
+        android:layout_width="match_parent" android:layout_height="match_parent"
+        android:descendantFocusability="beforeDescendants" android:focusable="true"
+        android:focusableInTouchMode="true" android:orientation="vertical" android:padding="16dp">
+
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:gravity="center_vertical" android:orientation="horizontal" android:paddingBottom="12dp">
+            <ImageView android:layout_width="40dp" android:layout_height="40dp"
+                android:src="@drawable/ic_brand" android:importantForAccessibility="no" android:contentDescription="@null" />
+            <LinearLayout android:layout_width="0dp" android:layout_weight="1"
+                android:layout_height="wrap_content" android:layout_marginStart="12dp" android:orientation="vertical">
+                <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:text="@string/brand_title" android:textSize="20sp" android:fontFamily="sans-serif-medium"
+                    android:textColor="@color/text" />
+                <TextView style="@style/SectionLabel" android:text="@string/brand_caption" android:textSize="11sp" />
+            </LinearLayout>
+            <TextView android:id="@+id/networkBadge" style="@style/SectionLabel"
+                android:layout_width="wrap_content" android:text="@string/local_network"
+                android:drawableStart="@drawable/ic_wifi" android:drawablePadding="8dp" android:gravity="center_vertical"
+                android:textColor="@color/accent" android:textSize="11sp" />
+        </LinearLayout>
+
+        <LinearLayout android:id="@+id/panels" android:layout_width="match_parent" android:layout_height="0dp"
+            android:layout_weight="1" android:orientation="horizontal" android:baselineAligned="false">
+            <ScrollView android:id="@+id/connectionScroll" android:layout_width="0dp" android:layout_height="match_parent"
+                android:layout_weight="0.39" android:fillViewport="true" android:scrollbars="none"
+                android:background="@drawable/bg_card">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:padding="18dp" android:orientation="vertical">
+                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:text="@string/connection_heading" android:textSize="20sp"
+                        android:fontFamily="sans-serif-medium" android:textColor="@color/text" />
+                    <TextView style="@style/BodyText" android:layout_marginTop="4dp" android:text="@string/connection_caption" />
+                    <TextView style="@style/SectionLabel" android:layout_marginTop="20dp"
+                        android:text="@string/host_label" />
+                    <EditText android:id="@+id/hostInput" android:layout_width="match_parent"
+                        android:layout_height="wrap_content" android:minHeight="48dp" android:layout_marginTop="8dp"
+                        android:background="@drawable/bg_input" android:padding="12dp"
+                        android:drawableStart="@drawable/ic_pc" android:drawablePadding="10dp"
+                        android:importantForAutofill="no" android:hint="@string/host_hint"
+                        android:imeOptions="actionGo|flagNoExtractUi" android:inputType="textUri|textNoSuggestions"
+                        android:singleLine="true" android:textColor="@color/text" android:textColorHint="@color/dim" android:textSize="14sp" />
+                    <Button android:id="@+id/connectButton" style="@style/PrimaryButton"
+                        android:layout_marginTop="10dp" android:text="@string/connect" />
+                    <Button android:id="@+id/discoverButton" style="@style/SecondaryButton"
+                        android:layout_marginTop="8dp" android:drawableStart="@drawable/ic_search" android:text="@string/discover" />
+                    <LinearLayout android:id="@+id/discoveredList" android:layout_width="match_parent"
+                        android:layout_height="wrap_content" android:layout_marginTop="12dp" android:orientation="vertical" />
+                    <TextView style="@style/BodyText" android:text="@string/discover_help" android:textSize="12sp" android:layout_marginTop="8dp" />
+                    <View android:layout_width="match_parent" android:layout_height="1dp" android:background="@color/stroke"
+                        android:layout_marginTop="20dp" android:layout_marginBottom="18dp" />
+                    <TextView style="@style/SectionLabel" android:text="@string/preferences_label" />
+                    <CheckBox android:id="@+id/phoneRumble" android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:minHeight="48dp" android:layout_marginTop="4dp" android:buttonTint="@color/accent"
+                        android:text="@string/phone_rumble" android:textSize="14sp" android:textColor="@color/text" />
+                    <TextView style="@style/BodyText" android:text="@string/rumble_hint" android:textSize="12sp" />
+                    <CheckBox android:id="@+id/autoConnect" android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:minHeight="48dp" android:layout_marginTop="8dp" android:buttonTint="@color/accent"
+                        android:text="@string/auto_connect" android:textSize="14sp" android:textColor="@color/text" />
+                    <TextView style="@style/BodyText" android:text="@string/auto_connect_hint" android:textSize="12sp" />
+                    <Button android:id="@+id/darkButton" style="@style/SecondaryButton" android:layout_marginTop="16dp"
+                        android:drawableStart="@drawable/ic_moon" android:text="@string/dark_mode" />
+                    <TextView style="@style/BodyText" android:layout_marginTop="8dp" android:text="@string/dark_hint" android:textSize="12sp" />
+                </LinearLayout>
+            </ScrollView>
+
+            <ScrollView android:id="@+id/sessionScroll" android:layout_width="0dp" android:layout_height="match_parent"
+                android:layout_weight="0.61" android:layout_marginStart="12dp" android:fillViewport="true" android:scrollbars="none">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical">
+                    <FrameLayout android:id="@+id/sessionHero" android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:background="@drawable/bg_card">
+                        <ImageView android:layout_width="match_parent" android:layout_height="172dp"
+                            android:src="@drawable/signal_background" android:scaleType="centerCrop" android:alpha="0.55"
+                            android:importantForAccessibility="no" android:contentDescription="@null" />
+                        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                            android:orientation="horizontal" android:gravity="center_vertical" android:baselineAligned="false" android:padding="16dp">
+                            <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1"
+                                android:orientation="vertical">
+                                <TextView style="@style/SectionLabel" android:text="@string/session_label" android:textColor="@color/accent" />
+                                <TextView android:id="@+id/statusText" android:layout_width="match_parent" android:layout_height="wrap_content"
+                                    android:layout_marginTop="6dp" android:text="@string/status_disconnected" android:textSize="24sp"
+                                    android:fontFamily="sans-serif-medium" android:textColor="@color/text" />
+                                <TextView android:id="@+id/sessionText" style="@style/BodyText" android:layout_marginTop="6dp" android:text="@string/session_idle" />
+                            </LinearLayout>
+                            <com.steamwifi.controller.GamepadView android:id="@+id/gamepadView"
+                                android:layout_width="0dp" android:layout_weight="1.15" android:layout_height="140dp"
+                                android:layout_marginStart="8dp" android:contentDescription="@string/controller_preview" />
+                        </LinearLayout>
+                    </FrameLayout>
+
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="10dp"
+                        android:orientation="horizontal" android:baselineAligned="false">
+                        <LinearLayout android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1"
+                            android:orientation="vertical" android:padding="12dp" android:background="@drawable/bg_metric">
+                            <TextView style="@style/SectionLabel" android:text="@string/latency_label" android:textSize="11sp" />
+                            <TextView android:id="@+id/pingText" android:layout_width="match_parent" android:layout_height="wrap_content"
+                                android:layout_marginTop="3dp" android:text="@string/ping_none" android:textSize="23sp"
+                                android:textColor="@color/accent" android:fontFamily="sans-serif-medium" />
+                            <TextView android:id="@+id/pingDetailText" style="@style/BodyText" android:text="@string/ping_idle" android:textSize="11sp" />
+                        </LinearLayout>
+                        <LinearLayout android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1"
+                            android:layout_marginStart="10dp" android:orientation="vertical" android:padding="12dp" android:background="@drawable/bg_metric">
+                            <TextView style="@style/SectionLabel" android:text="@string/traffic_label" android:textSize="11sp" />
+                            <TextView android:id="@+id/statsText" android:layout_width="match_parent" android:layout_height="wrap_content"
+                                android:layout_marginTop="3dp" android:text="@string/stats_none" android:textSize="23sp"
+                                android:textColor="@color/text" android:fontFamily="sans-serif-medium" />
+                            <TextView android:id="@+id/statsDetailText" style="@style/BodyText" android:text="@string/stats_idle" android:textSize="11sp" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="10dp"
+                        android:orientation="horizontal" android:baselineAligned="false">
+                        <LinearLayout android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1"
+                            android:orientation="vertical" android:padding="12dp" android:background="@drawable/bg_metric">
+                            <TextView style="@style/SectionLabel" android:text="@string/wifi_label" android:textSize="11sp" />
+                            <TextView android:id="@+id/wifiText" android:layout_width="match_parent" android:layout_height="wrap_content"
+                                android:layout_marginTop="3dp" android:text="@string/wifi_none" android:textSize="23sp"
+                                android:textColor="@color/accent" android:fontFamily="sans-serif-medium" />
+                            <TextView android:id="@+id/wifiDetailText" style="@style/BodyText" android:text="@string/wifi_off" android:textSize="11sp" />
+                        </LinearLayout>
+                        <LinearLayout android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1"
+                            android:layout_marginStart="10dp" android:orientation="vertical" android:padding="12dp" android:background="@drawable/bg_metric">
+                            <TextView style="@style/SectionLabel" android:text="@string/battery_label" android:textSize="11sp" />
+                            <TextView android:id="@+id/batteryText" android:layout_width="match_parent" android:layout_height="wrap_content"
+                                android:layout_marginTop="3dp" android:text="@string/battery_none" android:textSize="23sp"
+                                android:textColor="@color/text" android:fontFamily="sans-serif-medium" />
+                            <TextView android:id="@+id/batteryDetailText" style="@style/BodyText" android:text="@string/battery_discharging" android:textSize="11sp" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="10dp"
+                        android:orientation="vertical" android:padding="16dp" android:background="@drawable/bg_card">
+                        <TextView style="@style/SectionLabel" android:text="@string/controller_label" />
+                        <TextView android:id="@+id/controllerText" style="@style/BodyText" android:layout_marginTop="8dp" android:text="@string/controller_none" />
+                        <TextView style="@style/SectionLabel" android:layout_marginTop="16dp" android:text="@string/monitor_label" />
+                        <TextView android:id="@+id/monitorText" style="@style/BodyText" android:layout_marginTop="8dp"
+                            android:textColor="@color/text" android:textSize="12sp" android:fontFamily="monospace" />
+                    </LinearLayout>
+                    <TextView style="@style/BodyText" android:text="@string/hint" android:textSize="12sp"
+                        android:padding="12dp" android:drawableStart="@drawable/ic_wifi" android:drawablePadding="10dp" />
+                </LinearLayout>
+            </ScrollView>
+        </LinearLayout>
+    </LinearLayout>
+
+    <TextView android:id="@+id/darkOverlay" android:layout_width="match_parent" android:layout_height="match_parent"
+        android:background="#FF000000" android:clickable="true" android:focusable="true" android:gravity="center"
+        android:text="@string/dark_overlay_hint" android:textColor="#FF555555" android:textSize="14sp" android:visibility="gone" />
+</FrameLayout>
