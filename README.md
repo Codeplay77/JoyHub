@@ -186,3 +186,7 @@ tools/
   teste_pc.py        simulador do celular para testar o PC
   design_android.py  gera os recursos de design do Android e os SVGs da marca
 ```
+
+## Licença
+
+Distribuído sob a licença MIT. Veja [LICENSE](LICENSE).
