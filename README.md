@@ -2,12 +2,18 @@
 
 ![JoyHub — Seu controle. Sem fios.](assets/brand/joyhub-logo.svg)
 
-Usa um controle conectado ao celular Android (ex.: **GameSir X5**) como um **controle Xbox 360
-no Windows**, via Wi-Fi. A Steam e os jogos enxergam um controle Xbox 360 comum (XInput).
+**Sem Bluetooth no PC? O celular vira a ponte.** O controle (Xbox, DualShock 4, GameSir X5...)
+conecta no celular Android por Bluetooth ou USB, e o app repassa tudo ao PC pelo Wi-Fi. No
+Windows ele aparece como um **controle Xbox 360** comum (XInput), que a Steam e os jogos reconhecem.
 
 ```
-GameSir X5 ──USB-C──▶ app Android ──Wi-Fi/UDP──▶ JoyHub.exe ──▶ ViGEmBus ──▶ "Xbox 360 Controller" ──▶ Steam / jogos
+controle ──Bluetooth/USB──▶ app Android ──Wi-Fi/UDP──▶ JoyHub.exe ──▶ ViGEmBus ──▶ "Xbox 360 Controller" ──▶ Steam / jogos
 ```
+
+**Controles:** funciona com qualquer controle que o Android reconheça como gamepad. Testado
+com o GameSir X5. Os controles de Xbox (Bluetooth) e o DualShock 4 seguem o layout padrão do
+Android e devem funcionar, mas ainda não foram testados. Recursos que o Xbox 360 não tem
+(touchpad, giroscópio e light bar do DualShock 4) não chegam ao PC.
 
 ## 1. PC (Windows 10/11)
 
@@ -96,7 +102,8 @@ mostram as informações novas.
 
 ## 3. Jogando
 
-1. Encaixe o celular no GameSir X5 e abra o app.
+1. Conecte o controle ao celular (pareado por Bluetooth, no cabo USB ou encaixado, como no
+   GameSir X5) e abra o app.
 2. Toque no PC que aparece em "Buscar na rede" (ou digite o IP e toque em **Conectar ao PC**).
    Nas próximas vezes o app conecta sozinho ao último PC assim que o encontra (opção
    "Conectar sozinho ao último PC", em "Do seu jeito").
